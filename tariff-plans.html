@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tariff Plans - UMS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>UMS Admin</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="admin-dashboard.html" class="nav-item">Dashboard</a>
+                <a href="customer-management.html" class="nav-item">Customer Management</a>
+                <a href="meter-management.html" class="nav-item">Meter Management</a>
+                <a href="tariff-plans.html" class="nav-item active">Tariff Plans</a>
+                <a href="admin-billing.html" class="nav-item">Billing & Payments</a>
+                <a href="admin-reports.html" class="nav-item">Reports</a>
+                <a href="login.html" class="nav-item">Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Tariff Plans Management</h1>
+                <div class="user-profile">
+                    <span>Admin Staff</span>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <!-- Status message area -->
+                <div id="form-status"></div>
+
+                <div class="table-container">
+                    <div class="table-header">
+                        <h3>Current Utility Tariff Plans</h3>
+                        <a href="add-tariff.html" class="btn-add-new">+ Add New Tariff</a>
+                    </div>
+                    
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Tariff ID</th>
+                                <th>Utility ID</th>
+                                <th>Tariff Name</th>
+                                <th>Rate (Rs.)</th>
+                                <th>Unit/Slab</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <!-- *** CRITICAL CHANGE: The JavaScript will insert rows here *** -->
+                        <tbody id="tariff-table-body">
+                            <tr>
+                                <td colspan="6" style="text-align: center; font-style: italic;">
+                                    Loading tariff data...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+        </main>
+    </div>
+    <!-- *** CRITICAL CHANGE: ACTIVATE JAVASCRIPT LOGIC *** -->
+    <script src="app.js"></script>
+</body>
+</html>
