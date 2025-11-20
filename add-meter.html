@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Meter - UMS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        
+        <!-- --- Sidebar Navigation --- -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>UMS Admin</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="admin-dashboard.html" class="nav-item">Dashboard</a>
+                <a href="customer-management.html" class="nav-item">Customer Management</a>
+                <!-- Set 'Meter Management' as active -->
+                <a href="meter-management.html" class="nav-item active">Meter Management</a>
+                <a href="tariff-plans.html" class="nav-item">Tariff Plans</a>
+                <a href="admin-billing.html" class="nav-item">Billing & Payments</a>
+                <a href="admin-reports.html" class="nav-item">Reports</a>
+                <a href="login.html" class="nav-item">Logout</a>
+            </nav>
+        </aside>
+
+        <!-- --- Main Content Area --- -->
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Add New Meter</h1>
+                <div class="user-profile">
+                    <span>Admin Staff</span>
+                </div>
+            </header>
+
+            <div class="content-area">
+                
+                <div class="form-container">
+                    <h3>Register a New Utility Meter</h3>
+                    <p>Link a new meter to an existing customer and service.</p>
+                    
+                    <!-- *** ID ADDED TO FORM *** -->
+                    <form class="data-form" id="add-meter-form">
+                        <div class="form-grid">
+                            
+                            <div class="input-group">
+                                <label for="customer-id-select">Select Customer</label>
+                                <!-- *** ID CHANGED, STATIC OPTIONS REMOVED *** -->
+                                <select id="customer-id-select" name="customer-id" required>
+                                    <option value="" disabled selected>Loading customers...</option>
+                                    <!-- app.js will fill this list dynamically -->
+                                </select>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="meter-id">Meter ID / Serial Number</label>
+                                <input type="text" id="meter-id" name="meter-id" required>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="utility-type">Utility Type</label>
+                                <!-- These values MUST match the UtilityID in your Utility_Type table -->
+                                <select id="utility-type" name="utility-type" required>
+                                    <option value="" disabled selected>Select utility</option>
+                                    <option value="UTIL-01">Electricity</option>
+                                    <option value="UTIL-02">Water</option>
+                                    <option value="UTIL-03">Gas</option>
+                                    
+                                </select>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="status">Status</label>
+                                <select id="status" name="status" required>
+                                    <option value="Active">Active</option>
+                                    <option value="Pending Install">Pending Install</option>
+                                    <option value="Inactive">Inactive</option>
+                                </select>
+                            </div>
+
+                            <div class="input-group form-span-2">
+                                <label for="location">Location / Service Address</label>
+                                <input type="text" id="location" name="location" 
+                                       placeholder="e.g., 123 Galle Rd, Colombo 03 (auto-fills from customer)">
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="submit-button">Register Meter</button>
+                        </div>
+                        <!-- Status message area -->
+                        <div class="form-message" style="margin-top: 20px;"></div>
+                    </form>
+                </div>
+                
+            </div>
+        </main>
+    </div>
+    <!-- *** CRITICAL CHANGE: ACTIVATE JAVASCRIPT LOGIC *** -->
+    <script src="app.js"></script>
+</body>
+</html>
