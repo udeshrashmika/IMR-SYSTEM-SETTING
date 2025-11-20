@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Tariff Plan - UMS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>UMS Admin</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="admin-dashboard.html" class="nav-item">Dashboard</a>
+                <a href="customer-management.html" class="nav-item">Customer Management</a>
+                <a href="meter-management.html" class="nav-item">Meter Management</a>
+                <a href="tariff-plans.html" class="nav-item active">Tariff Plans</a>
+                <a href="admin-billing.html" class="nav-item">Billing & Payments</a>
+                <a href="admin-reports.html" class="nav-item">Reports</a>
+                <a href="login.html" class="nav-item">Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Add New Tariff Plan</h1>
+                <div class="user-profile">
+                    <span>Admin Staff</span>
+                </div>
+            </header>
+
+            <div class="content-area">
+                
+                <div class="form-container">
+                    <h3>Define New Billing Rate</h3>
+                    <p>Create a new tariff for a utility service.</p>
+                    
+                    <form class.data-form">
+                        <div class="form-grid">
+
+                            <div class="input-group">
+                                <label for="utility-type">Utility Type</label>
+                                <select id="utility-type" name="utility-type" required>
+                                    <option value="" disabled selected>Select utility</option>
+                                    <option value="electricity">Electricity</option>
+                                    <option value="water">Water</option>
+                                    <option value="gas">Gas</option>
+                                </select>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="tariff-name">Tariff Name</label>
+                                <input type="text" id="tariff-name" name="tariff-name" 
+                                       placeholder="e.g., Domestic (0-60 kWh)" required>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="rate">Rate (in Rs.)</label>
+                                <input type="number" id="rate" name="rate" 
+                                       placeholder="e.g., 30.00" required>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="unit">Unit</label>
+                                <select id="unit" name="unit" required>
+                                    <option value="" disabled selected>Select unit</option>
+                                    <option value="kWh">kWh (Electricity)</option>
+                                    <option value="m3">m³ (Water)</option>
+                                    <option value="unit">Unit (Gas, etc.)</option>
+                                </select>
+                            </div>
+
+                            <div class="input-group form-span-2">
+                                <label for="description">Description (Optional)</label>
+                                <input type="text" id="description" name="description" 
+                                       placeholder="e.g., Fixed monthly charge for water, etc.">
+                            </div>
+                        </div>
+                        
+                        <div class.form-actions">
+                            <button type="submit" class="submit-button">Save Tariff Plan</button>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </main>
+    </div>
+</body>
+</html>
