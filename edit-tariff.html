@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Tariff Plan - UMS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        
+        <!-- --- Sidebar Navigation --- -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>UMS Admin</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="admin-dashboard.html" class="nav-item">Dashboard</a>
+                <a href="customer-management.html" class="nav-item">Customer Management</a>
+                <a href="meter-management.html" class="nav-item">Meter Management</a>
+                <a href="tariff-plans.html" class="nav-item active">Tariff Plans</a>
+                <a href="admin-billing.html" class="nav-item">Billing & Payments</a>
+                <a href="admin-reports.html" class="nav-item">Reports</a>
+                <a href="login.html" class="nav-item">Logout</a>
+            </nav>
+        </aside>
+
+        <!-- --- Main Content Area --- -->
+        <main class="main-content">
+            <header class="main-header">
+                <h1 id="edit-page-title">Edit Tariff Plan</h1>
+                <div class="user-profile">
+                    <span>Admin Staff</span>
+                </div>
+            </header>
+
+            <div class="content-area">
+                
+                <div class="form-container">
+                    <h3>Update Billing Rate</h3>
+                    <p>Modify the details for this tariff plan.</p>
+                    
+                    <!-- *** FIX 1: Corrected 'classs' to 'class' *** -->
+                    <form class="data-form" id="edit-tariff-form">
+                        
+                        <div class="form-message"></div>
+
+                        <div class="form-grid">
+
+                             <div class="input-group">
+                                <label for="tariff-id">Tariff ID (Read-Only)</label>
+                                <input type="text" id="tariff-id" name="tariff-id" readonly>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="tariff-name">Tariff Name</label>
+                                <input type="text" id="tariff-name" name="tariff-name" required>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="utility-id">Utility Type</label>
+                                <!-- *** FIX 2: Removed hard-coded options *** -->
+                                <!-- app.js will now fill this dropdown from the database -->
+                                <select id="utility-id" name="utility-id" required>
+                                    <option value="">Loading utilities...</option>
+                                </select>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="rate">Rate (in Rs.)</label>
+                                <input type="number" id="rate" name="rate" step="0.01" required>
+                            </div>
+
+                        </div>
+                        
+                        <div class="form-actions" style="justify-content: space-between;">
+                            <button type="button" class="btn-action btn-delete" id="delete-tariff-btn">Delete Tariff</button>
+                            <button type="submit" class="submit-button">Update Tariff Plan</button>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </main>
+    </div>
+    <!-- SCRIPT: Must include app.js -->
+    <script src="app.js"></script>
+</body>
+</html>
