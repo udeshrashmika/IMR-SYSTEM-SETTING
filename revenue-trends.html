@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revenue Trends - UMS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        
+        <!-- --- Sidebar Navigation (Manager) --- -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>UMS Manager</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="manager-dashboard.html" class="nav-item">Reports Dashboard</a>
+                <a href="revenue-trends.html" class="nav-item active">Revenue Trends</a>
+                <a href="defaulters-list.html" class="nav-item">Defaulters List</a>
+                <a href="usage-patterns.html" class="nav-item">Usage Patterns</a>
+                <a href="login.html" class="nav-item">Logout</a>
+            </nav>
+        </aside>
+
+        <!-- --- Main Content Area --- -->
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Revenue Trends</h1>
+                <div class="user-profile">
+                    <span>Decision Maker</span>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <!-- Status message area -->
+                <div id="form-status"></div>
+                
+                <!-- Chart placeholder -->
+                <div class="chart-container">
+                    <h3>Monthly Revenue (Last 6 Months)</h3>
+                    <!-- This is a placeholder image for the chart -->
+                    <img src="https://placehold.co/900x400/3498db/white?text=Monthly+Revenue+Chart" 
+                         alt="Monthly Revenue Chart Placeholder">
+                </div>
+
+                <!-- Spacer -->
+                <div style="height: 30px;"></div>
+
+                <!-- Data table with the chart's data -->
+                <div class="table-container">
+                    <div class="table-header">
+                        <h3>Revenue Data (Live from Database)</h3>
+                        <a href="#" class="btn-add-new" style="background-color: #3498db;">Export as CSV</a>
+                    </div>
+                    
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Utility Name</th>
+                                <th>Total Revenue (Rs.)</th>
+                                <th>Total Payments</th>
+                            </tr>
+                        </thead>
+                         <!-- *** CRITICAL CHANGE: The JavaScript will insert rows here *** -->
+                        <tbody id="revenue-table-body">
+                            <tr>
+                                <td colspan="3" style="text-align: center; font-style: italic;">
+                                    Loading revenue report...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+        </main>
+    </div>
+    <!-- *** CRITICAL CHANGE: ACTIVATE JAVASCRIPT LOGIC *** -->
+    <script src="app.js"></script>
+</body>
+</html>
