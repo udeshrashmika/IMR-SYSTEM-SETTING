@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - UMS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>UMS Admin</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="admin-dashboard.html" class="nav-item active">Dashboard</a>
+                <a href="customer-management.html" class="nav-item">Customer Management</a>
+                <a href="meter-management.html" class="nav-item">Meter Management</a>
+                <a href="tariff-plans.html" class="nav-item">Tariff Plans</a>
+                <a href="admin-billing.html" class="nav-item">Billing & Payments</a>
+                <a href="admin-reports.html" class="nav-item">Reports</a>
+                <a href="login.html" class="nav-item">Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Dashboard Overview</h1>
+                <div class="user-profile">
+                    <span>Admin Staff</span>
+                </div>
+            </header>
+
+            <div class="content-area">
+                
+                <div class="widget-container">
+                    <div class="widget">
+                        <h3>Total Customers</h3>
+                        <!-- CRITICAL CHANGE: Added id attribute -->
+                        <p class="widget-value" id="widget-total-customers">...</p>
+                        <span class="widget-desc">All customer types</span>
+                    </div>
+
+                    <div class="widget">
+                        <h3>Total Meters</h3>
+                        <!-- CRITICAL CHANGE: Added id attribute -->
+                        <p class="widget-value" id="widget-total-meters">...</p>
+                        <span class="widget-desc">Across all utilities</span>
+                    </div>
+
+                    <div class="widget">
+                        <h3>Bills Pending</h3>
+                        <!-- CRITICAL CHANGE: Added id attribute -->
+                        <p class="widget-value" id="widget-bills-pending">...</p>
+                        <span class="widget-desc">Awaiting payment</span>
+                    </div>
+
+                    <div class="widget">
+                        <h3>Monthly Revenue</h3>
+                        <!-- CRITICAL CHANGE: Added id attribute -->
+                        <p class="widget-value" id="widget-monthly-revenue">Rs. ...</p>
+                        <span class="widget-desc">For this month</span>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- This script tag will now find the IDs and load the data -->
+    <script src="app.js"></script>
+</body>
+</html>
