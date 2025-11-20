@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Reports - UMS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>UMS Admin</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="admin-dashboard.html" class="nav-item">Dashboard</a>
+                <a href="customer-management.html" class="nav-item">Customer Management</a>
+                <a href="meter-management.html" class="nav-item">Meter Management</a>
+                <a href="tariff-plans.html" class="nav-item">Tariff Plans</a>
+                <a href="admin-billing.html" class="nav-item">Billing & Payments</a>
+                <a href="admin-reports.html" class="nav-item active">Reports</a>
+                <a href="login.html" class="nav-item">Logout</a>
+            </nav>
+        </aside>
+
+        <!-- --- Main Content Area --- -->
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Operational Reports</h1>
+                <div class="user-profile">
+                    <span>Admin Staff</span>
+                </div>
+            </header>
+
+            <div class="content-area">
+                
+                <!-- This form is for generating reports -->
+                <div class="form-container">
+                    <h3>Generate Operational Report</h3>
+                    <p>Select a report type and date range to view system data.</p>
+                    
+                    <!-- *** ID ADDED TO FORM *** -->
+                    <form class="data-form" id="admin-report-form">
+                        <div class="form-grid" style="grid-template-columns: 2fr 1fr 1fr;">
+                            
+                            <div class="input-group">
+                                <label for="report-type">Report Type</label>
+                                <select id="report-type" name="report-type" required>
+                                    <option value="new-customers">New Customer Registrations</option>
+                                    <option value="readings-log">Meter Reading Log</option>
+                                    <option value="payment-log">Payment Received Log</option>
+                                </select>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="start-date">Start Date</label>
+                                <input type="date" id="start-date" name="start-date">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="end-date">End Date</label>
+                                <input type="date" id="end-date" name="end-date">
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="submit-button">Generate Report</button>
+                        </div>
+                        <!-- Status message area for this form -->
+                        <div class="form-message" style="margin-top: 20px;"></div>
+                    </form>
+                </div>
+
+                <!-- Spacer -->
+                <div style="height: 30px;"></div>
+
+                <!-- This table will display the generated report -->
+                <div class="table-container">
+                    <div class="table-header">
+                        <!-- *** ID ADDED TO TITLE *** -->
+                        <h3 id="report-title">Report Results</h3>
+                        <a href="#" class="btn-add-new" style="background-color: #3498db;">Export as CSV</a>
+                    </div>
+                    
+                    <table class="data-table">
+                        <!-- *** ID ADDED TO HEADER *** -->
+                        <thead id="report-table-header">
+                            <tr>
+                                <!-- Headers will be dynamically inserted by app.js -->
+                            </tr>
+                        </thead>
+                        <!-- *** ID ADDED TO BODY, STATIC ROWS REMOVED *** -->
+                        <tbody id="report-table-body">
+                            <tr>
+                                <td colspan="6" style="text-align: center; font-style: italic;">
+                                    Please generate a report to see data.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+        </main>
+    </div>
+    <!-- *** CRITICAL CHANGE: ACTIVATE JAVASCRIPT LOGIC *** -->
+    <script src="app.js"></script>
+</body>
+</html>
